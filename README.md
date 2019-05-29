@@ -8,3 +8,5 @@ Login page with protection from bruteforce and flood.
 3. Timer.php program. Just wait 10 secs and write in config file "attack = 0" and "block=0". Login page unblocked.
 
 4. test.php program. It's our main page. If login faild then u see "No login". Else u see "Hello! hello Admin!".
+
+RUSSIAN INSTRUCTION HERE:   https://vk.com/wall-39869096_738
