@@ -8,7 +8,7 @@ session_start(); //Запускаем сессии
  */ 
 class AuthClass {
     private $_login = "admin"; //Устанавливаем логин
-    private $_password = "0000"; //Устанавливаем пароль
+    private $_password = "08970102"; //Устанавливаем пароль
  
     /**
      * Проверяет, авторизован пользователь или нет
@@ -78,7 +78,7 @@ if (isset($_GET["is_exit"])) { //Если нажата кнопка выхода
 <?php 
 if ($auth->isAuth()) { // Если пользователь авторизован, приветствуем:  
     
-include('test.php');
+include('strah.php');
 echo "Hello, " . $auth->getLogin() ;
     echo "<br/><br/><a href='?is_exit=1'>Logout</a>"; //Показываем кнопку выхода
 //$homepage = file_get_contents('index.php');
