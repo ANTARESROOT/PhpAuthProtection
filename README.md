@@ -9,4 +9,7 @@ Login page with protection from bruteforce and flood.
 
 4. test.php program. It's our main page. If login faild then u see "No login". Else u see "Hello! hello Admin!".
 
+5. ip.txt and ipbad.txt. Here's write all login and login with incorrect passwords.
+4. who.php and whobad.php. Here's writes in ip.txt and ipbad.txt.
+
 RUSSIAN INSTRUCTION HERE:   https://vk.com/wall-39869096_738
