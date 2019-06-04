@@ -3,6 +3,7 @@ require("secure.php");
 require("who.php");
 session_start(); //��������� ������
 $mes = "Enter login & pass";
+$page = $_POST["page"];
 
 /**
  * ����� ��� �����������
@@ -70,6 +71,8 @@ if (isset($_POST["login"]) && isset($_POST["password"])) { //���� ��
     }
 }
 
+
+
 if (isset($_GET["is_exit"])) { //���� ������ ������ ������
     if ($_GET["is_exit"] == 1) {
         $auth->out(); //�������
@@ -82,9 +85,28 @@ if (isset($_GET["is_exit"])) { //���� ������ �����
 <?php 
 if ($auth->isAuth()) { // ���� ������������ �����������, ������������:  
     
-include('test.php');
-echo "Hello, " . $auth->getLogin() ;
-    echo "<br/><br/><a href='?is_exit=1'>Logout</a>"; //���������� ������ ������
+   //Открываем нужную страничку 
+    if ($page == "t1")
+    {
+        
+        include('test.php');
+        
+        echo "Hello, " . $auth->getLogin() ;
+        echo "<br/><br/><a href='?is_exit=1'>Logout</a>"; //���������� ������ ������
+    }
+    else if ($page == "t2")
+    {
+        include('test2.php');
+        
+        echo "Hello, " . $auth->getLogin() ;
+        echo "<br/><br/><a href='?is_exit=1'>Logout</a>";
+    }
+    else
+    {
+        echo "Not found";
+        echo "<br/><br/><a href='?is_exit=1'>Logout</a>";
+        var_dump($_POST["page"]);
+    }
 //$homepage = file_get_contents('index.php');
 //echo $homepage;
 } 
@@ -97,6 +119,15 @@ else { //���� �� �����������, ������
             <h1>[ <?php echo $mes ?> ]</h1>
             <input name="login" type="text" placeholder="username" value="<?php echo (isset($_POST["login"])) ? $_POST["login"] : null; // ��������� ���� �� ��������� ?>"/>
             <input name="password" type="password" placeholder="passcode" />
+            <select class="btn" name="page" id="selectID">
+
+<option value="t1">Test1</option>
+
+<option value="t2">Test2</option>
+
+<option value="t3">Test3</option>
+
+</select>
             <input class="btn"  type="submit" value="OK"/>
 
         </form>
